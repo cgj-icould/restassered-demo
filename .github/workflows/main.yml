@@ -1,0 +1,34 @@
+name: API Test Workflow
+
+# 触发条件：什么时候运行这个脚本？
+on:
+  push:
+    branches: [ "main" ] # 当你把代码推到 main 分支时运行
+  pull_request:
+    branches: [ "main" ] # 当有 pull request 时运行
+  workflow_dispatch:     # 允许你手动去网页上点击运行
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest # GitHub 提供的最新版 Ubuntu 虚拟机
+
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+
+    - name: 设置 JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11' # 改成你项目实际使用的 Java 版本
+        distribution: 'temurin'
+        cache: maven
+
+    - name: 运行 Maven 测试
+      run: mvn clean test # 这里就是跑你项目的测试命令
+      
+    - name: 上传测试报告 (可选)
+      if: always() # 即使测试失败了也要上传报告
+      uses: actions/upload-artifact@v4
+      with:
+        name: surefire-reports
+        path: target/surefire-reports/
