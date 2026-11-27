@@ -3,9 +3,9 @@ name: API Test Workflow
 # 触发条件：什么时候运行这个脚本？
 on:
   push:
-    branches: [ "main" ] # 当你把代码推到 main 分支时运行
+    branches: [ "master" ] # 当你把代码推到 main 分支时运行
   pull_request:
-    branches: [ "main" ] # 当有 pull request 时运行
+    branches: [ "master" ] # 当有 pull request 时运行
   workflow_dispatch:     # 允许你手动去网页上点击运行
 
 jobs:
