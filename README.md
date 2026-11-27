@@ -1,4 +1,4 @@
-
+[![API Test Workflow](https://github.com/cgj-icould/restassered-demo/actions/workflows/main.yml/badge.svg)](https://github.com/cgj-icould/restassered-demo/actions/workflows/main.yml)
 # REST Assured API Test Demo
 这是一个基于 Java + Maven + REST Assured 构建的接口自动化测试项目。主要用于演示接口测试的框架搭建、用例编写以及通过 GitHub Actions 实现持续集成（CI）。
 
