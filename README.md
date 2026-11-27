@@ -1,3 +1,4 @@
+![REST Assured API Tests](https://github.com/cgj-icould/restassured-demo/actions/workflows/playwright.yml/badge.svg)
 # REST Assured API Test Demo
 
 <!-- 如果你之前配置了 Actions，可以在这里贴上状态徽标，格式如下： -->
